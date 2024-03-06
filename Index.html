@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drone-No-Fly-Zone Web Map</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.css" />
+    <style>
+        #map{
+            height: 100vh;
+            width: 100%;
+            margin: 0px;
+            padding: 0px;
+        }
+
+        .info {
+    padding: 6px 8px;
+    font: 14px/16px Arial, Helvetica, sans-serif;
+    background: white;
+    background: rgba(255,255,255,0.8);
+    box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    border-radius: 5px;
+}
+.info h4 {
+    margin: 0 0 5px;
+    color: #777;
+}
+
+.legend {
+    line-height: 18px;
+    color: #555;
+}
+.legend i {
+    width: 18px;
+    height: 18px;
+    float: left;
+    margin-right: 8px;
+    opacity: 0.7;
+}
+.centered-text {
+    text-align: center;
+    background-color: transparent;
+    color: black;
+    position: absolute; /* Position the text absolutely within its parent container */
+    top: 5%; /* Position the text vertically at the center of the parent container */
+    left: 50%; /* Position the text horizontally at the center of the parent container */
+    transform: translate(-50%, -50%); /* Center the text precisely */
+    z-index: 9999; }
+
+    </style>
+
+</head>
+<body>
+    <div class="centered-text">
+        <h1>DRONE NO FLY ZONE WEB-MAP</h1>
+    </div><div id="map"></div>
+    
+</body>
+</html>
+<script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+<script src="./data/line.js"></script>
+<script src="./data/point.js"></script>
+<script src="./data/polygon.js"></script>
+<script src="./shapefiles/County_Boundery.js"></script>
+<script src="./shapefiles/Police.js"></script>
+<script src="./shapefiles/National_Parks_and _Reserves.js"></script>
+<script src="./shapefiles/Military.js"></script>
+<script src="./shapefiles/Airport.js"></script>
+<script src="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.js"></script>
+<script src="./data/usstates.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Turf.js/7.0.0-alpha.111/turf.min.js"></script>
+
+<script>
+
+    /*===================================================
+                      OSM  LAYER               
+===================================================*/
+
+    
+  // Use the Geolocation API to get the user's current position
+  navigator.geolocation.getCurrentPosition(function(position) {
+    var lat = position.coords.latitude;
+    var lng = position.coords.longitude;
+   
+
+    var map = L.map('map').setView([lat, lng], 12);
+    
+  
+var osm = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+});
+osm.addTo(map);
+
+/*===================================================
+                      MARKER               
+===================================================*/
+
+
+
+/*===================================================
+                     TILE LAYER               
+===================================================*/
+
+var CartoDB_DarkMatter = L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
+attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>',
+subdomains: 'abcd',
+	maxZoom: 19
+});
+CartoDB_DarkMatter.addTo(map);
+
+// Google Map Layer
+
+googleStreets = L.tileLayer('http://{s}.google.com/vt/lyrs=m&x={x}&y={y}&z={z}',{
+    maxZoom: 20,
+    subdomains:['mt0','mt1','mt2','mt3']
+ });
+ googleStreets.addTo(map);
+
+ // Satelite Layer
+googleSat = L.tileLayer('http://{s}.google.com/vt/lyrs=s&x={x}&y={y}&z={z}',{
+   maxZoom: 20,
+   subdomains:['mt0','mt1','mt2','mt3']
+ });
+googleSat.addTo(map);
+
+var Stamen_Watercolor = L.tileLayer('https://stamen-tiles-{s}.a.ssl.fastly.net/watercolor/{z}/{x}/{y}.{ext}', {
+ attribution: 'Map tiles by <a href="http://stamen.com">Stamen Design</a>, <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a> &mdash; Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+subdomains: 'abcd',
+minZoom: 1,
+maxZoom: 16,
+ext: 'jpg'
+});
+Stamen_Watercolor.addTo(map);
+
+
+/*===================================================
+                      GET USER LOCATION               
+===================================================*/
+
+
+
+/*===================================================
+                      GEOJSON               
+===================================================*/
+
+var countydata = L.geoJSON(countyJSON, {
+    onEachFeature: function(feature, layer) {
+        var label = L.circleMarker(layer.getBounds().getCenter(), {
+            icon: L.divIcon({
+                className: 'label',
+                html: feature.properties.Name
+            })
+        }).addTo(map);
+        
+    },
+    style: {
+        fillColor: 'transparent',
+        fillOpacity: 0.4,
+        color: 'green'
+    }
+}).addTo(map);
+
+var linedata = L.geoJSON(lineJSON).addTo(map);
+
+var airportata = L.geoJSON(airportJSON, {
+    onEachFeature: function(feature, layer) {
+        var bufferDistance = feature.properties.BUFF_DIST;
+
+        // Generate warnings based on buffer distance
+        if (bufferDistance >= 1 ) {
+            feature.properties.warning = "Fly with Caution About 1 km Proximity to " + feature.properties.name;
+        } else if (bufferDistance >= 3 ) {
+            feature.properties.warning = "Fly with Caution About 3kms Proximity to " + feature.properties.name;
+        } else if (bufferDistance >= 5 ) {
+            feature.properties.warning = "Fly with Caution About 5kms Proximity to " + feature.properties.name;
+        } else if (bufferDistance >= 7) {
+            feature.properties.warning =  "Fly with Caution About 7kms Proximity to " + feature.properties.name;
+        }
+
+        // Update choropleth style based on buffer distance
+        if (bufferDistance >= 7) {
+            layer.setStyle({
+                fillColor: '#feebe2', // Adjust color for military restricted zones
+                fillOpacity: 0.2
+            });
+        } else if (bufferDistance >= 5 ) {
+            layer.setStyle({
+                fillColor: '#fbb4b9', // Adjust color for police station zones
+                fillOpacity: 0.2
+            });
+        } else if (bufferDistance >= 3 ) {
+            layer.setStyle({
+                fillColor: '#f768a1', // Adjust color for police station zones
+                fillOpacity: 0.2
+            });
+        } else if (bufferDistance >= 1) {
+            layer.setStyle({
+                fillColor: '#ae017e', // Adjust color for police station zones
+                fillOpacity: 0.2
+            });
+        }
+    }
+}).addTo(map);
+
+var policedata = L.geoJSON(policeJSON, {
+    onEachFeature: function(feature, layer) {
+        var bufferDistance = feature.properties.BUFF_DIST;
+
+        // Generate warnings based on buffer distance
+        if (bufferDistance >= 50 && bufferDistance <= 300) {
+            feature.properties.warning = "Fly with Caution Proximity to " + feature.properties.name;
+        } else if (bufferDistance === null || bufferDistance === undefined) {
+            feature.properties.warning = "Proximity to Police Station";
+        }
+
+        // Update choropleth style based on buffer distance
+        if (bufferDistance >= 50 && bufferDistance <= 300) {
+            layer.setStyle({
+                fillColor: '#bdc9e1', // Adjust color for military restricted zones
+                fillOpacity: 0.2
+            });
+        } else if (bufferDistance < 50) {
+            layer.setStyle({
+                fillColor: '#0570b0', // Adjust color for police station zones
+                fillOpacity: 0.2
+            });
+        }
+    }
+}).addTo(map);
+
+
+
+// Create a legend
+var legend = L.control({position: 'bottomright'});
+legend.onAdd = function (map) {
+    var div = L.DomUtil.create('div', 'info legend');
+    div.innerHTML += '<i style="background: #e41a1c"></i> Military Restricted Zone<br>';
+    div.innerHTML += '<i style="background: #377eb8"></i> Police Station Zone<br>';
+    div.innerHTML += '<i style="background: #984ea3"></i> Aerodome Zone<br>';
+    div.innerHTML += '<i style="background: #4daf4a"></i> Nature Parks & Reserves Zone<br>';
+    return div;
+};
+legend.addTo(map);
+
+var singleMarker = L.marker([lat, lng]);
+singleMarker.addTo(map);
+
+singleMarker.on('click', function(e) {
+    var popupContent = getWarningsForLocation(e.latlng); // Function to get warnings based on location
+    L.popup()
+        .setLatLng(e.latlng)
+        .setContent(popupContent)
+        .openOn(map);
+});
+
+function getWarningsForLocation(location) {
+    var warnings = [];
+
+    // Iterate through layers to check for warnings in the vicinity
+    map.eachLayer(function(layer) {
+        if (layer.feature && layer.feature.geometry && layer.feature.geometry.type === 'Polygon') {
+            var withinPolygon = turf.booleanPointInPolygon(turf.point([location.lng, location.lat]), layer.toGeoJSON());
+            if (withinPolygon && layer.feature.properties && layer.feature.properties.warning) {
+                warnings.push(layer.feature.properties.warning);
+            }
+        }
+    });
+
+    // Format warnings for display
+    var popupContent = '<h4>Warnings in this area:</h4>';
+    if (warnings.length > 0) {
+        popupContent += '<ul>';
+        warnings.forEach(function(warning) {
+            popupContent += '<li>' + warning + '</li>';
+        });
+        popupContent += '</ul>';
+    } else {
+        popupContent += '<p>No warnings found in this area.</p>';
+    }
+
+    return popupContent;
+}
+
+
+});
+
+/*===================================================
+                      LAYER CONTROL               
+===================================================*/
+
+var baseLayers = {
+    "Satellite":googleSat,
+    "Google Map":googleStreets,
+    "Water Color":Stamen_Watercolor,
+    "OpenStreetMap": osm,
+};
+
+var overlays = {
+    "Marker": singleMarker,
+    "PointData":pointdata,
+    "LineData":linedata,
+    "PolygonData":polygondata,
+    "MilitaryData":militarydata,
+    "PoliceData":policedata,
+    "CountyData": countydata,
+    "AirportData":airportdata,
+    "ParksData":parkdata
+};
+
+L.control.layers(baseLayers, overlays).addTo(map);
+
+
+/*===================================================
+                      SEARCH BUTTON               
+===================================================*/
+
+L.Control.geocoder().addTo(map);
+
+
+/*===================================================
+                      Choropleth Map               
+===================================================*/
+
+L.geoJSON(statesData).addTo(map);
+
+
+function getColor(d) {
+    return d > 1000 ? '#800026' :
+           d > 500  ? '#BD0026' :
+           d > 200  ? '#E31A1C' :
+           d > 100  ? '#FC4E2A' :
+           d > 50   ? '#FD8D3C' :
+           d > 20   ? '#FEB24C' :
+           d > 10   ? '#FED976' :
+                      '#FFEDA0';
+}
+
+function style(feature) {
+    return {
+        fillColor: getColor(feature.properties.density),
+        weight: 2,
+        opacity: 1,
+        color: 'white',
+        dashArray: '3',
+        fillOpacity: 0.7
+    };
+}
+
+L.geoJson(statesData, {style: style}).addTo(map);
+
+function highlightFeature(e) {
+    var layer = e.target;
+
+    layer.setStyle({
+        weight: 5,
+        color: '#666',
+        dashArray: '',
+        fillOpacity: 0.7
+    });
+
+    if (!L.Browser.ie && !L.Browser.opera && !L.Browser.edge) {
+        layer.bringToFront();
+    }
+
+    info.update(layer.feature.properties);
+}
+
+function resetHighlight(e) {
+    geojson.resetStyle(e.target);
+    info.update();
+}
+
+var geojson;
+// ... our listeners
+geojson = L.geoJson(statesData);
+
+function zoomToFeature(e) {
+    map.fitBounds(e.target.getBounds());
+}
+
+function onEachFeature(feature, layer) {
+    layer.on({
+        mouseover: highlightFeature,
+        mouseout: resetHighlight,
+        click: zoomToFeature
+    });
+}
+
+geojson = L.geoJson(statesData, {
+    style: style,
+    onEachFeature: onEachFeature
+}).addTo(map);
+
+var info = L.control();
+
+info.onAdd = function (map) {
+    this._div = L.DomUtil.create('div', 'info'); // create a div with a class "info"
+    this.update();
+    return this._div;
+};
+
+// method that we will use to update the control based on feature properties passed
+info.update = function (props) {
+    this._div.innerHTML = '<h4>US Population Density</h4>' +  (props ?
+        '<b>' + props.name + '</b><br />' + props.density + ' people / mi<sup>2</sup>'
+        : 'Hover over a state');
+};
+
+info.addTo(map);
+
+var legend = L.control({position: 'bottomright'});
+
+legend.onAdd = function (map) {
+
+    var div = L.DomUtil.create('div', 'info legend'),
+        grades = [0, 10, 20, 50, 100, 200, 500, 1000],
+        labels = [];
+
+    // loop through our density intervals and generate a label with a colored square for each interval
+    for (var i = 0; i < grades.length; i++) {
+        div.innerHTML +=
+            '<i style="background:' + getColor(grades[i] + 1) + '"></i> ' +
+            grades[i] + (grades[i + 1] ? '&ndash;' + grades[i + 1] + '<br>' : '+');
+    }
+
+    return div;
+};
+
+legend.addTo(map);
+
+
+</script>
