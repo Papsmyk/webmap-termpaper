@@ -1,0 +1,77 @@
+FID,Id,Name,Reg_Section,Location,Classifica,Title,Area_Size,Owner,Tenure,Leasehold,Lease_end,Use,Development,Unimproved,Improved,Date_of_Valuation,Rate_Structure,land_rate,land_rent,pay_rate,pay_rent
+0,0,4841,Section A,Katheri,Residential,Freehold,1200 sqm,James Kipchoge,Permanent,Yes,2026-01-15,Residential,Single-family House,1000 sqm,200 sqm,2023-09-21,Fixed,7800.00,3900.00,Monthly,1560.00
+1,0,4842,Section B,Katheri,Commercial,Leasehold,1500 sqm,Esther Njeri,Lease,No,2032-07-20,Commercial,Retail Store,1300 sqm,200 sqm,2023-09-21,Variable,9100.00,0.00,Quarterly,0.00
+2,0,4843,Section C,Katheri,Industrial,Freehold,2000 sqm,John Mugo,Permanent,Yes,2028-05-10,Industrial,Factory,1700 sqm,300 sqm,2023-09-21,Fixed,15600.00,7800.00,Monthly,3120.00
+3,0,1557 MUTHANGENE SCHOOL,Section D,Katheri,Institutional,Freehold,5000 sqm,Paul Maina,Permanent,Yes,2030-11-30,Institutional,School,4500 sqm,500 sqm,2023-09-21,Fixed,24000.00,12000.00,Monthly,4800.00
+4,0,1560 CHURCH,Section E,Katheri,Religious,Freehold,800 sqm,Mary Chebet,Permanent,Yes,2027-12-10,Religious,Church,700 sqm,100 sqm,2023-09-21,Fixed,6800.00,3400.00,Monthly,1360.00
+5,0,1558 KITHAKU MARKET,Section F,Katheri,Commercial,Leasehold,1800 sqm,Patrick Muthoni,Lease,No,2033-02-15,Commercial,Market,1600 sqm,200 sqm,2023-09-21,Variable,9600.00,0.00,Quarterly,0.00
+6,0,5820,Section G,Katheri,Residential,Freehold,1000 sqm,Anne Wanjiru,Permanent,Yes,2026-04-20,Residential,Single-family House,900 sqm,100 sqm,2023-09-21,Fixed,6900.00,3450.00,Monthly,1380.00
+7,0,5819,Section H,Katheri,Commercial,Freehold,1400 sqm,Michael Omondi,Permanent,Yes,2029-11-05,Commercial,Shopping Complex,1200 sqm,200 sqm,2023-09-21,Fixed,12400.00,6200.00,Monthly,2480.00
+8,0,5693,Section I,Katheri,Residential,Leasehold,600 sqm,Janet Nkatha,Lease,No,2032-04-30,Residential,Apartment Building,500 sqm,100 sqm,2023-09-21,Variable,5400.00,0.00,Annually,0.00
+9,0,5692,Section J,Katheri,Industrial,Freehold,1800 sqm,Paul Maina,Permanent,Yes,2028-10-15,Industrial,Factory,1500 sqm,300 sqm,2023-09-21,Fixed,11000.00,5500.00,Monthly,2200.00
+10,0,5878,Section K,Katheri,Residential,Freehold,900 sqm,Lucy Wambui,Permanent,Yes,2025-02-28,Residential,Single-family House,800 sqm,100 sqm,2023-09-21,Fixed,7200.00,3600.00,Monthly,1440.00
+11,0,5879,Section L,Katheri,Commercial,Leasehold,1200 sqm,Grace Njeri,Lease,No,2032-05-01,Commercial,Retail Store,1000 sqm,200 sqm,2023-09-21,Variable,8400.00,0.00,Quarterly,0.00
+12,0,5093,Section M,Katheri,Residential,Freehold,600 sqm,John Mugo,Permanent,Yes,2027-08-15,Residential,Single-family House,500 sqm,100 sqm,2023-09-21,Fixed,7500.00,3750.00,Monthly,1500.00
+13,0,5094,Section N,Katheri,Industrial,Freehold,2500 sqm,Mary Chebet,Permanent,Yes,2029-11-30,Industrial,Warehouse,2000 sqm,500 sqm,2023-09-21,Fixed,13500.00,6750.00,Monthly,2700.00
+14,0,5095,Section O,Katheri,Commercial,Leasehold,1800 sqm,Patrick Muthoni,Lease,No,2032-10-01,Commercial,Office Building,1600 sqm,200 sqm,2023-09-21,Variable,9600.00,0.00,Quarterly,0.00
+15,0,5096,Section P,Katheri,Residential,Freehold,1000 sqm,Anne Wanjiru,Permanent,Yes,2026-03-15,Residential,Single-family House,900 sqm,100 sqm,2023-09-21,Fixed,6900.00,3450.00,Monthly,1380.00
+16,0,5097,Section Q,Katheri,Commercial,Freehold,1400 sqm,Michael Omondi,Permanent,Yes,2028-10-31,Commercial,Shopping Complex,1200 sqm,200 sqm,2023-09-21,Fixed,12400.00,6200.00,Monthly,2480.00
+17,0,5098,Section R,Katheri,Residential,Leasehold,600 sqm,Janet Nkatha,Lease,No,2031-02-28,Residential,Apartment Building,500 sqm,100 sqm,2023-09-21,Variable,5400.00,0.00,Annually,0.00
+18,0,5099,Section S,Katheri,Industrial,Freehold,1800 sqm,Paul Maina,Permanent,Yes,2027-08-31,Industrial,Factory,1500 sqm,300 sqm,2023-09-21,Fixed,11000.00,5500.00,Monthly,2200.00
+19,0,5100,Section T,Katheri,Residential,Freehold,900 sqm,Lucy Wambui,Permanent,Yes,2025-02-15,Residential,Single-family House,800 sqm,100 sqm,2023-09-21,Fixed,7200.00,3600.00,Monthly,1440.00
+20,0,5101,Section U,Katheri,Commercial,Leasehold,1200 sqm,Grace Njeri,Lease,No,2032-05-15,Commercial,Retail Store,1000 sqm,200 sqm,2023-09-21,Variable,8400.00,0.00,Quarterly,0.00
+21,0,2040,Section V,Katheri,Residential,Freehold,600 sqm,John Mugo,Permanent,Yes,2027-08-15,Residential,Single-family House,500 sqm,100 sqm,2023-09-21,Fixed,7500.00,3750.00,Monthly,1500.00
+22,0,2041,Section W,Katheri,Industrial,Freehold,2500 sqm,Mary Chebet,Permanent,Yes,2029-11-30,Industrial,Warehouse,2000 sqm,500 sqm,2023-09-21,Fixed,13500.00,6750.00,Monthly,2700.00
+23,0,2042,Section X,Katheri,Commercial,Leasehold,1800 sqm,Patrick Muthoni,Lease,No,2032-10-15,Commercial,Office Building,1600 sqm,200 sqm,2023-09-21,Variable,9600.00,0.00,Quarterly,0.00
+24,0,2043,Section Y,Katheri,Residential,Freehold,1000 sqm,Anne Wanjiru,Permanent,Yes,2026-03-20,Residential,Single-family House,900 sqm,100 sqm,2023-09-21,Fixed,6900.00,3450.00,Monthly,1380.00
+25,0,4199,Section Z,Katheri,Commercial,Freehold,1400 sqm,Michael Omondi,Permanent,Yes,2029-12-10,Commercial,Shopping Complex,1200 sqm,200 sqm,2023-09-21,Fixed,12400.00,6200.00,Monthly,2480.00
+26,0,4776,Section AA,Katheri,Residential,Leasehold,600 sqm,Janet Nkatha,Lease,No,2031-03-20,Residential,Apartment Building,500 sqm,100 sqm,2023-09-21,Variable,5400.00,0.00,Annually,0.00
+27,0,4434,Section BB,Katheri,Industrial,Freehold,1800 sqm,Paul Maina,Permanent,Yes,2027-09-30,Industrial,Factory,1500 sqm,300 sqm,2023-09-21,Fixed,11000.00,5500.00,Monthly,2200.00
+28,0,4777,Section CC,Katheri,Residential,Freehold,900 sqm,Lucy Wambui,Permanent,Yes,2025-03-01,Residential,Single-family House,800 sqm,100 sqm,2023-09-21,Fixed,7200.00,3600.00,Monthly,1440.00
+29,0,1612,Section DD,Katheri,Commercial,Leasehold,1200 sqm,Grace Njeri,Lease,No,2032-06-15,Commercial,Retail Store,1000 sqm,200 sqm,2023-09-21,Variable,8400.00,0.00,Quarterly,0.00
+30,0,3293,Section EE,Katheri,Residential,Freehold,600 sqm,John Mugo,Permanent,Yes,2027-07-20,Residential,Single-family House,500 sqm,100 sqm,2023-09-21,Fixed,7500.00,3750.00,Monthly,1500.00
+31,0,3293,Section FF,Katheri,Industrial,Freehold,2500 sqm,Mary Chebet,Permanent,Yes,2029-10-10,Industrial,Warehouse,2000 sqm,500 sqm,2023-09-21,Fixed,13500.00,6750.00,Monthly,2700.00
+32,0,4198,Section GG,Katheri,Commercial,Leasehold,1800 sqm,Patrick Muthoni,Lease,No,2032-09-20,Commercial,Office Building,1600 sqm,200 sqm,2023-09-21,Variable,9600.00,0.00,Quarterly,0.00
+33,0,4197,Section HH,Katheri,Residential,Freehold,1000 sqm,Anne Wanjiru,Permanent,Yes,2026-02-15,Residential,Single-family House,900 sqm,100 sqm,2023-09-21,Fixed,6900.00,3450.00,Monthly,1380.00
+34,0,4196,Section II,Katheri,Commercial,Freehold,1400 sqm,Michael Omondi,Permanent,Yes,2029-11-20,Commercial,Shopping Complex,1200 sqm,200 sqm,2023-09-21,Fixed,12400.00,6200.00,Monthly,2480.00
+35,0,4371,Section JJ,Katheri,Residential,Leasehold,600 sqm,Janet Nkatha,Lease,No,2031-01-15,Residential,Apartment Building,500 sqm,100 sqm,2023-09-21,Variable,5400.00,0.00,Annually,0.00
+36,0,4372,Section KK,Katheri,Industrial,Freehold,1800 sqm,Paul Maina,Permanent,Yes,2027-08-15,Industrial,Factory,1500 sqm,300 sqm,2023-09-21,Fixed,11000.00,5500.00,Monthly,2200.00
+37,0,4543,Section LL,Katheri,Residential,Freehold,900 sqm,Lucy Wambui,Permanent,Yes,2025-03-10,Residential,Single-family House,800 sqm,100 sqm,2023-09-21,Fixed,7200.00,3600.00,Monthly,1440.00
+38,0,4542,Section MM,Katheri,Commercial,Leasehold,1200 sqm,Grace Njeri,Lease,No,2032-06-30,Commercial,Retail Store,1000 sqm,200 sqm,2023-09-21,Variable,8400.00,0.00,Quarterly,0.00
+39,0,Section NN,Katheri,Industrial,Freehold,1800 sqm,Patrick Muthoni,Permanent,Yes,2028-09-30,Industrial,Factory,1500 sqm,300 sqm,2023-09-21,Fixed,15600.00,7800.00,Monthly,3120.00
+40,0,4582,Section OO,Katheri,Residential,Freehold,900 sqm,John Mugo,Permanent,Yes,2026-02-01,Residential,Single-family House,800 sqm,100 sqm,2023-09-21,Fixed,7500.00,3750.00,Monthly,1500.00
+41,0,5102,Section PP,Katheri,Commercial,Leasehold,1200 sqm,Mary Chebet,Lease,No,2032-07-01,Commercial,Office Building,1000 sqm,200 sqm,2023-09-21,Variable,8400.00,0.00,Quarterly,0.00
+42,0,1627,Section QQ,Katheri,Residential,Freehold,600 sqm,Paul Maina,Permanent,Yes,2027-09-15,Residential,Single-family House,500 sqm,100 sqm,2023-09-21,Fixed,7500.00,3750.00,Monthly,1500.00
+43,0,4319,Section RR,Katheri,Industrial,Freehold,2500 sqm,Esther Njeri,Permanent,Yes,2029-12-15,Industrial,Warehouse,2000 sqm,500 sqm,2023-09-21,Fixed,13500.00,6750.00,Monthly,2700.00
+44,0,4320,Section SS,Katheri,Commercial,Leasehold,1800 sqm,James Kipchoge,Lease,No,2032-08-01,Commercial,Shopping Complex,1600 sqm,200 sqm,2023-09-21,Variable,9600.00,0.00,Quarterly,0.00
+45,0,4321,Section TT,Katheri,Residential,Freehold,1000 sqm,Anne Wanjiru,Permanent,Yes,2026-02-28,Residential,Single-family House,900 sqm,100 sqm,2023-09-21,Fixed,6900.00,3450.00,Monthly,1380.00
+46,0,3184,Section UU,Katheri,Commercial,Freehold,1400 sqm,Michael Omondi,Permanent,Yes,2029-11-15,Commercial,Retail Store,1200 sqm,200 sqm,2023-09-21,Fixed,12400.00,6200.00,Monthly,2480.00
+47,0,1896,Section VV,Katheri,Residential,Leasehold,600 sqm,Janet Nkatha,Lease,No,2031-01-30,Residential,Apartment Building,500 sqm,100 sqm,2023-09-21,Variable,5400.00,0.00,Annually,0.00
+48,0,1947,Section WW,Katheri,Industrial,Freehold,1800 sqm,Paul Maina,Permanent,Yes,2027-09-30,Industrial,Factory,1500 sqm,300 sqm,2023-09-21,Fixed,11000.00,5500.00,Monthly,2200.00
+49,0,5880,Section XX,Katheri,Residential,Freehold,900 sqm,Lucy Wambui,Permanent,Yes,2025-03-15,Residential,Single-family House,800 sqm,100 sqm,2023-09-21,Fixed,7200.00,3600.00,Monthly,1440.00
+50,0,2730,Section YY,Katheri,Commercial,Leasehold,1200 sqm,Grace Njeri,Lease,No,2032-07-15,Commercial,Retail Store,1000 sqm,200 sqm,2023-09-21,Variable,8400.00,0.00,Quarterly,0.00
+51,0,2931,Section ZZ,Katheri,Residential,Freehold,600 sqm,John Mugo,Permanent,Yes,2027-08-01,Residential,Single-family House,500 sqm,100 sqm,2023-09-21,Fixed,7500.00,3750.00,Monthly,1500.00
+52,0,3997,Section AAA,Katheri,Industrial,Freehold,2500 sqm,Mary Chebet,Permanent,Yes,2029-12-31,Industrial,Warehouse,2000 sqm,500 sqm,2023-09-21,Fixed,13500.00,6750.00,Monthly,2700.00
+53,0,3996,Section BBB,Katheri,Commercial,Leasehold,1800 sqm,Patrick Muthoni,Lease,No,2032-08-15,Commercial,Office Building,1600 sqm,200 sqm,2023-09-21,Variable,9600.00,0.00,Quarterly,0.00
+54,0,3995,Section CCC,Katheri,Residential,Freehold,1000 sqm,Anne Wanjiru,Permanent,Yes,2026-03-05,Residential,Single-family House,900 sqm,100 sqm,2023-09-21,Fixed,6900.00,3450.00,Monthly,1380.00
+55,0,3994,Section DDD,Katheri,Commercial,Freehold,1400 sqm,Michael Omondi,Permanent,Yes,2029-10-20,Commercial,Shopping Complex,1200 sqm,200 sqm,2023-09-21,Fixed,12400.00,6200.00,Monthly,2480.00
+56,0,5881,Section EEE,Katheri,Residential,Leasehold,600 sqm,Janet Nkatha,Lease,No,2031-02-15,Residential,Apartment Building,500 sqm,100 sqm,2023-09-21,Variable,5400.00,0.00,Annually,0.00
+57,0,5006,Section FFF,Katheri,Industrial,Freehold,1800 sqm,Paul Maina,Permanent,Yes,2027-09-15,Industrial,Factory,1500 sqm,300 sqm,2023-09-21,Fixed,11000.00,5500.00,Monthly,2200.00
+58,0,4624,Section GGG,Katheri,Residential,Freehold,900 sqm,Lucy Wambui,Permanent,Yes,2025-03-20,Residential,Single-family House,800 sqm,100 sqm,2023-09-21,Fixed,7200.00,3600.00,Monthly,1440.00
+59,0,4625,Section HHH,Katheri,Commercial,Leasehold,1200 sqm,Grace Njeri,Lease,No,2032-08-30,Commercial,Retail Store,1000 sqm,200 sqm,2023-09-21,Variable,8400.00,0.00,Quarterly,0.00
+60,0,4626,Section III,Katheri,Residential,Freehold,600 sqm,John Mugo,Permanent,Yes,2027-08-15,Residential,Single-family House,500 sqm,100 sqm,2023-09-21,Fixed,7500.00,3750.00,Monthly,1500.00
+61,0,4627,Section JJJ,Katheri,Industrial,Freehold,2500 sqm,Mary Chebet,Permanent,Yes,2029-12-31,Industrial,Warehouse,2000 sqm,500 sqm,2023-09-21,Fixed,13500.00,6750.00,Monthly,2700.00
+62,0,4628,Section KKK,Katheri,Commercial,Leasehold,1800 sqm,Patrick Muthoni,Lease,No,2032-09-15,Commercial,Office Building,1600 sqm,200 sqm,2023-09-21,Variable,9600.00,0.00,Quarterly,0.00
+63,0,4629,Section LLL,Katheri,Residential,Freehold,1000 sqm,Anne Wanjiru,Permanent,Yes,2026-03-15,Residential,Single-family House,900 sqm,100 sqm,2023-09-21,Fixed,6900.00,3450.00,Monthly,1380.00
+64,0,4630,Section MMM,Katheri,Commercial,Freehold,1400 sqm,Michael Omondi,Permanent,Yes,2029-10-30,Commercial,Shopping Complex,1200 sqm,200 sqm,2023-09-21,Fixed,12400.00,6200.00,Monthly,2480.00
+65,0,4631,Section NNN,Katheri,Residential,Leasehold,600 sqm,Janet Nkatha,Lease,No,2031-03-15,Residential,Apartment Building,500 sqm,100 sqm,2023-09-21,Variable,5400.00,0.00,Annually,0.00
+66,0,4632,Section OOO,Katheri,Industrial,Freehold,1800 sqm,Paul Maina,Permanent,Yes,2027-09-30,Industrial,Factory,1500 sqm,300 sqm,2023-09-21,Fixed,11000.00,5500.00,Monthly,2200.00
+67,0,4633,Section PPP,Katheri,Residential,Freehold,900 sqm,Lucy Wambui,Permanent,Yes,2025-04-01,Residential,Single-family House,800 sqm,100 sqm,2023-09-21,Fixed,7200.00,3600.00,Monthly,1440.00
+68,0,4634,Section QQQ,Katheri,Commercial,Leasehold,1200 sqm,Grace Njeri,Lease,No,2032-09-30,Commercial,Retail Store,1000 sqm,200 sqm,2023-09-21,Variable,8400.00,0.00,Quarterly,0.00
+69,0,4635,Section RRR,Katheri,Residential,Freehold,600 sqm,John Mugo,Permanent,Yes,2027-09-30,Residential,Single-family House,500 sqm,100 sqm,2023-09-21,Fixed,7500.00,3750.00,Monthly,1500.00
+70,0,4636,Section SSS,Katheri,Industrial,Freehold,2500 sqm,Mary Chebet,Permanent,Yes,2030-01-15,Industrial,Warehouse,2000 sqm,500 sqm,2023-09-21,Fixed,13500.00,6750.00,Monthly,2700.00
+71,0,4637,Section TTT,Katheri,Commercial,Leasehold,1800 sqm,Patrick Muthoni,Lease,No,2032-10-15,Commercial,Office Building,1600 sqm,200 sqm,2023-09-21,Variable,9600.00,0.00,Quarterly,0.00
+72,0,4638,Section UUU,Katheri,Residential,Freehold,1000 sqm,Anne Wanjiru,Permanent,Yes,2026-04-01,Residential,Single-family House,900 sqm,100 sqm,2023-09-21,Fixed,6900.00,3450.00,Monthly,1380.00
+73,0,4639,Section VVV,Katheri,Commercial,Freehold,1400 sqm,Michael Omondi,Permanent,Yes,2029-11-15,Commercial,Shopping Complex,1200 sqm,200 sqm,2023-09-21,Fixed,12400.00,6200.00,Monthly,2480.00
+74,0,4640,Section WWW,Katheri,Residential,Leasehold,600 sqm,Janet Nkatha,Lease,No,2031-04-15,Residential,Apartment Building,500 sqm,100 sqm,2023-09-21,Variable,5400.00,0.00,Annually,0.00
+75,0,4641,Section XXX,Katheri,Industrial,Freehold,1800 sqm,Paul Maina,Permanent,Yes,2027-09-15,Industrial,Factory,1500 sqm,300 sqm,2023-09-21,Fixed,11000.00,5500.00,Monthly,2200.00
