@@ -103,7 +103,22 @@ var countydata = L.geoJSON(countyJSON, {
     }
 }).addTo(map);
 
-var parksdata = L.geoJSON(parksJSON).addTo(map);
+var parksdata = L.geoJSON(parksJSON, {
+    onEachFeature: function(feature, layer) {
+        var label = L.marker(layer.getBounds().getCenter(), {
+            icon: L.divIcon({
+                className: 'label',
+                html: feature.properties.name
+            })
+        }).addTo(map);
+        
+    },
+    style: {
+        fillColor: 'transparent',
+        fillOpacity: 0.4,
+        color: 'red'
+    }
+}).addTo(map);
 
 
 var airportdata = L.geoJSON(airportJSON, {
