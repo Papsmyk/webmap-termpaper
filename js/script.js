@@ -114,9 +114,9 @@ var parksdata = L.geoJSON(parksJSON, {
         
     },
     style: {
-        fillColor: 'transparent',
+        fillColor: 'green',
         fillOpacity: 0.4,
-        color: 'red'
+        color: 'black'
     }
 }).addTo(map);
 
@@ -234,8 +234,8 @@ legend.addTo(map);
 var baseMaps = {
     "Satellite": googleSat,
     "Google Map": googleStreets,
+    "CartoDB_DarkMatter": CartoDB_DarkMatter,
     "OpenStreetMap": osm,
-    "CartoDB_DarkMatter": CartoDB_DarkMatter
 };
 
 var overlays = {
